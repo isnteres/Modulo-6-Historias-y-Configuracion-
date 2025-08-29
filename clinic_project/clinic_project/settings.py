@@ -63,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'clinic_project.middleware.TenantMiddleware',
 ]
 
 ROOT_URLCONF = 'clinic_project.urls'
@@ -70,7 +71,7 @@ ROOT_URLCONF = 'clinic_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'clinic_db',     # Nombre de tu base
         'USER': 'root',          # Usuario MySQL
-        'PASSWORD': 'tu_password',
+        'PASSWORD': 'm123456',
         'HOST': 'localhost',
         'PORT': '3306',
     }
